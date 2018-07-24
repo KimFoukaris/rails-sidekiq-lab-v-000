@@ -1,6 +1,6 @@
 class SongsWorker
   require 'csv'
-  include Sidekiq::worker
+  include Sidekiq::Worker
 
   def perform(songs_file)
     CSV.foreach(params["file"].path, headers: true) do |song|
